@@ -1,0 +1,6 @@
+{
+  "name": "Frère Tuck",
+  "description": "L'analyseur lucide et bienveillant des garanties et protections de votre foyer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
