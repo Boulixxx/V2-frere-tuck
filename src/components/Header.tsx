@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHousehold } from '../context/HouseholdContext';
-import { Shield, Sparkles, RotateCcw } from 'lucide-react';
+import { Shield, Sparkles, RotateCcw, Palette } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const {
@@ -11,6 +11,8 @@ export const Header: React.FC = () => {
     resetDemoData,
     openHouseholdManager,
     openWorkspaceModal,
+    openPaletteModal,
+    palette,
   } = useHousehold();
 
   return (
@@ -22,11 +24,17 @@ export const Header: React.FC = () => {
             onClick={() => setActiveTab('situations')}
             className="flex items-center gap-2 text-left group"
           >
-            <div className="w-8 h-8 rounded-lg bg-emerald-800 text-amber-200 flex items-center justify-center font-bold text-sm shadow-sm group-hover:bg-emerald-900 transition-colors">
+            <div
+              className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm shadow-sm transition-colors"
+              style={{
+                backgroundColor: 'var(--color-brand-logo-bg)',
+                color: 'var(--color-brand-logo-text)',
+              }}
+            >
               FT
             </div>
             <div className="flex flex-col">
-              <span className="text-base font-bold font-display tracking-tight text-slate-900 group-hover:text-emerald-800 transition-colors whitespace-nowrap">
+              <span className="text-base font-bold font-display tracking-tight text-slate-900 group-hover:opacity-80 transition-opacity whitespace-nowrap">
                 Frère Tuck
               </span>
             </div>
@@ -67,8 +75,17 @@ export const Header: React.FC = () => {
           </button>
         </nav>
 
-        {/* Zone 3: 1 primary action or state switch */}
+        {/* Zone 3: Actions & switches */}
         <div className="flex items-center gap-2 shrink-0">
+          <button
+            onClick={openPaletteModal}
+            className="px-2.5 py-1.5 text-xs font-medium rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300 transition-colors flex items-center gap-1.5 shadow-xs"
+            title="Choisir une palette de couleurs (Bleu Nuit, Scribe, Basalte, Émeraude)"
+          >
+            <Palette className="w-3.5 h-3.5 text-slate-700 shrink-0" />
+            <span className="hidden sm:inline font-medium">Palettes</span>
+          </button>
+
           <button
             onClick={() => openWorkspaceModal('overview')}
             className="px-2.5 py-1.5 text-xs font-medium rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300 transition-colors flex items-center gap-1.5 shadow-xs"

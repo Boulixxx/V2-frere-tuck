@@ -56,7 +56,7 @@ export const ProtectionsAudit: React.FC = () => {
 
         <button
           onClick={() => setZeroDataMode(false)}
-          className="px-4 py-2.5 bg-emerald-800 hover:bg-emerald-900 text-white rounded-xl text-xs sm:text-sm font-semibold transition-colors"
+          className="px-4 py-2.5 btn-primary rounded-xl text-xs sm:text-sm font-semibold transition-colors"
         >
           Recharger le foyer de démonstration (Thomas, Camille, Léo)
         </button>

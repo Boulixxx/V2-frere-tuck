@@ -319,7 +319,7 @@ Thomas`,
           </div>
           <button
             type="submit"
-            className="px-4 py-2.5 bg-emerald-800 hover:bg-emerald-900 text-white rounded-xl text-xs sm:text-sm font-semibold transition-colors flex items-center gap-1.5 shrink-0"
+            className="px-4 py-2.5 btn-primary rounded-xl text-xs sm:text-sm font-semibold transition-colors flex items-center gap-1.5 shrink-0"
           >
             <span>Analyser</span>
             <ArrowRight className="w-4 h-4" />
@@ -451,7 +451,7 @@ Thomas`,
           <div className="pt-2 flex flex-wrap items-center gap-3">
             <button
               onClick={() => setZeroDataMode(false)}
-              className="px-4 py-2 bg-emerald-800 hover:bg-emerald-900 text-white text-xs font-semibold rounded-xl transition-colors"
+              className="px-4 py-2 btn-primary text-xs font-semibold rounded-xl transition-colors"
             >
               Recharger le foyer de démonstration (Thomas, Camille, Léo)
             </button>
@@ -1141,7 +1141,7 @@ Thomas`,
               <button
                 type="button"
                 onClick={handlePrepareClaim}
-                className="px-5 py-3 bg-emerald-800 hover:bg-emerald-900 text-white rounded-xl text-xs sm:text-sm font-bold shadow-md shadow-emerald-900/10 flex items-center gap-2 transition-all active:scale-[0.98]"
+                className="px-5 py-3 btn-primary rounded-xl text-xs sm:text-sm font-bold shadow-md flex items-center gap-2 transition-all active:scale-[0.98]"
               >
                 <span>Préparer la suite</span>
                 <ArrowRight className="w-4 h-4" />

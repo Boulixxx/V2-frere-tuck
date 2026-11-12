@@ -342,7 +342,7 @@ export const RobinTransferModal: React.FC = () => {
                 disabled={!hasConfirmedAgreement}
                 className={`px-4 py-2 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all shadow-sm ${
                   hasConfirmedAgreement
-                    ? 'bg-emerald-800 hover:bg-emerald-900 text-white shadow-emerald-900/10'
+                    ? 'btn-primary'
                     : 'bg-slate-200 text-slate-400 cursor-not-allowed'
                 }`}
               >

@@ -60,6 +60,13 @@ interface HouseholdContextType {
   openWorkspaceModal: (tab?: 'overview' | 'drive' | 'docs' | 'sheets' | 'gmail') => void;
   closeWorkspaceModal: () => void;
 
+  // Visual Palettes & Themes
+  palette: 'navy' | 'parchment' | 'basalt' | 'forest';
+  setPalette: (p: 'navy' | 'parchment' | 'basalt' | 'forest') => void;
+  isPaletteModalOpen: boolean;
+  openPaletteModal: () => void;
+  closePaletteModal: () => void;
+
   // Direct scenario triggers
   requestedScenario: 'scene1_ski' | 'scene3_annulation' | null;
   setRequestedScenario: (scene: 'scene1_ski' | 'scene3_annulation' | null) => void;
@@ -151,7 +158,25 @@ export const HouseholdProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   const [isHouseholdManagerOpen, setIsHouseholdManagerOpen] = useState(false);
   const [isWorkspaceModalOpen, setIsWorkspaceModalOpen] = useState(false);
   const [workspaceActiveTab, setWorkspaceActiveTab] = useState<'overview' | 'drive' | 'docs' | 'sheets' | 'gmail'>('overview');
+  const [palette, setPaletteState] = useState<'navy' | 'parchment' | 'basalt' | 'forest'>(() => {
+    try {
+      const saved = localStorage.getItem('frere_tuck_palette');
+      if (saved && ['navy', 'parchment', 'basalt', 'forest'].includes(saved)) {
+        return saved as any;
+      }
+    } catch {}
+    return 'navy';
+  });
+  const [isPaletteModalOpen, setIsPaletteModalOpen] = useState(false);
   const [requestedScenario, setRequestedScenario] = useState<'scene1_ski' | 'scene3_annulation' | null>(null);
+
+  // Sync data-theme with HTML root element
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', palette);
+    try {
+      localStorage.setItem('frere_tuck_palette', palette);
+    } catch {}
+  }, [palette]);
 
   // Sync documents whenever hasComplementaryDoc changes
   useEffect(() => {
@@ -398,6 +423,9 @@ export const HouseholdProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   };
   const closeWorkspaceModal = () => setIsWorkspaceModalOpen(false);
 
+  const openPaletteModal = () => setIsPaletteModalOpen(true);
+  const closePaletteModal = () => setIsPaletteModalOpen(false);
+
   return (
     <HouseholdContext.Provider
       value={{
@@ -428,6 +456,11 @@ export const HouseholdProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         workspaceActiveTab,
         openWorkspaceModal,
         closeWorkspaceModal,
+        palette,
+        setPalette: setPaletteState,
+        isPaletteModalOpen,
+        openPaletteModal,
+        closePaletteModal,
         updateStay,
         updateMember,
         addAuditItem,

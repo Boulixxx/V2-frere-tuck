@@ -5,6 +5,134 @@
   --font-display: 'Outfit', 'Plus Jakarta Sans', sans-serif;
 }
 
+:root, [data-theme="navy"] {
+  --color-canvas-bg: #f8fafc;
+  --color-card-bg: #ffffff;
+  --color-brand-primary: #0f172a;
+  --color-brand-primary-hover: #1e293b;
+  --color-brand-accent: #1e40af;
+  --color-brand-accent-hover: #1d4ed8;
+  --color-brand-accent-subtle: #eff6ff;
+  --color-brand-accent-text: #1d4ed8;
+  --color-brand-logo-bg: #0f172a;
+  --color-brand-logo-text: #60a5fa;
+  --color-border-card: #e2e8f0;
+  --color-border-accent: #bfdbfe;
+  --color-badge-green-bg: #f0fdf4;
+  --color-badge-green-text: #166534;
+  --color-badge-amber-bg: #fffbeb;
+  --color-badge-amber-text: #92400e;
+  --color-badge-indigo-bg: #eff6ff;
+  --color-badge-indigo-text: #1d4ed8;
+}
+
+[data-theme="parchment"] {
+  --color-canvas-bg: #fbfbf9;
+  --color-card-bg: #ffffff;
+  --color-brand-primary: #1c1917;
+  --color-brand-primary-hover: #292524;
+  --color-brand-accent: #9a3412;
+  --color-brand-accent-hover: #7c2d12;
+  --color-brand-accent-subtle: #fff7ed;
+  --color-brand-accent-text: #9a3412;
+  --color-brand-logo-bg: #1c1917;
+  --color-brand-logo-text: #fed7aa;
+  --color-border-card: #e7e5e4;
+  --color-border-accent: #fed7aa;
+  --color-badge-green-bg: #f0fdf4;
+  --color-badge-green-text: #166534;
+  --color-badge-amber-bg: #fef3c7;
+  --color-badge-amber-text: #92400e;
+  --color-badge-indigo-bg: #ffedd5;
+  --color-badge-indigo-text: #9a3412;
+}
+
+[data-theme="basalt"] {
+  --color-canvas-bg: #f4f4f5;
+  --color-card-bg: #ffffff;
+  --color-brand-primary: #09090b;
+  --color-brand-primary-hover: #18181b;
+  --color-brand-accent: #4338ca;
+  --color-brand-accent-hover: #3730a3;
+  --color-brand-accent-subtle: #eef2ff;
+  --color-brand-accent-text: #4338ca;
+  --color-brand-logo-bg: #09090b;
+  --color-brand-logo-text: #818cf8;
+  --color-border-card: #e4e4e7;
+  --color-border-accent: #c7d2fe;
+  --color-badge-green-bg: #ecfdf5;
+  --color-badge-green-text: #065f46;
+  --color-badge-amber-bg: #fffbeb;
+  --color-badge-amber-text: #92400e;
+  --color-badge-indigo-bg: #eef2ff;
+  --color-badge-indigo-text: #4338ca;
+}
+
+[data-theme="forest"] {
+  --color-canvas-bg: #f6f8f6;
+  --color-card-bg: #ffffff;
+  --color-brand-primary: #062c22;
+  --color-brand-primary-hover: #0c3e31;
+  --color-brand-accent: #065f46;
+  --color-brand-accent-hover: #047857;
+  --color-brand-accent-subtle: #ecfdf5;
+  --color-brand-accent-text: #065f46;
+  --color-brand-logo-bg: #062c22;
+  --color-brand-logo-text: #fde68a;
+  --color-border-card: #e2e8f0;
+  --color-border-accent: #a7f3d0;
+  --color-badge-green-bg: #ecfdf5;
+  --color-badge-green-text: #065f46;
+  --color-badge-amber-bg: #fffbeb;
+  --color-badge-amber-text: #92400e;
+  --color-badge-indigo-bg: #f0fdf4;
+  --color-badge-indigo-text: #065f46;
+}
+
+body {
+  background-color: var(--color-canvas-bg);
+  transition: background-color 0.2s ease;
+}
+
+/* Dynamic theme helper classes */
+.btn-primary {
+  background-color: var(--color-brand-primary) !important;
+  color: #ffffff !important;
+  transition: background-color 0.15s ease;
+}
+.btn-primary:hover {
+  background-color: var(--color-brand-primary-hover) !important;
+}
+
+.btn-accent {
+  background-color: var(--color-brand-accent) !important;
+  color: #ffffff !important;
+  transition: background-color 0.15s ease;
+}
+.btn-accent:hover {
+  background-color: var(--color-brand-accent-hover) !important;
+}
+
+.text-brand-primary {
+  color: var(--color-brand-primary);
+}
+
+.text-brand-accent {
+  color: var(--color-brand-accent);
+}
+
+.bg-brand-accent-subtle {
+  background-color: var(--color-brand-accent-subtle);
+}
+
+.border-brand-card {
+  border-color: var(--color-border-card);
+}
+
+.border-brand-accent {
+  border-color: var(--color-border-accent);
+}
+
 /* Custom scrollbar and subtle transitions */
 ::-webkit-scrollbar {
   width: 6px;

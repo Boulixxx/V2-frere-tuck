@@ -12,6 +12,7 @@ import { OverlapModal } from './components/OverlapModal';
 import { RobinTransferModal } from './components/RobinTransferModal';
 import { HouseholdManagerModal } from './components/HouseholdManagerModal';
 import { GoogleWorkspaceModal } from './components/GoogleWorkspaceModal';
+import { PaletteSwitcherModal } from './components/PaletteSwitcherModal';
 import { SituationChecker } from './views/SituationChecker';
 import { ProtectionsAudit } from './views/ProtectionsAudit';
 import { HouseholdView } from './views/HouseholdView';
@@ -52,6 +53,7 @@ const MainContent: React.FC = () => {
       <RobinTransferModal />
       <HouseholdManagerModal />
       <GoogleWorkspaceModal />
+      <PaletteSwitcherModal />
     </div>
   );
 };
